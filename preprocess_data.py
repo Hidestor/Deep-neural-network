@@ -7,6 +7,8 @@ import os
 import scipy
 import numpy as np
 from skimage import io # scikit-image is a collection of algorithms for image processing.
+
+#Gaussian blur can be used in order to obtain a smooth grayscale digital image.
 from scipy.ndimage.filters import gaussian_filter
 from scipy.misc import toimage
 
