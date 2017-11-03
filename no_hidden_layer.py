@@ -1,5 +1,5 @@
 # To test the model type the following command
-# python3 assignment.py <iterations> <learning rate>
+# python3 no_hidden_layer.py <iterations> <learning rate>
 
 import os
 import sys
@@ -67,11 +67,11 @@ y = tf.nn.softmax(tf.matmul(x, W) + b)
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
 
 #This modifies each variable according to the magnitude of the derivation of loss with respect to that variable
-# /\W = -@ ( d (cross_entropy) / d W)
 train_step = tf.train.GradientDescentOptimizer(LEARNING_RATE).minimize(cross_entropy)
 
 #creating an operation for initializing the placeholders i.e x--> inputs  and y_--> outputs
 init = tf.initialize_all_variables()
+
 sess = tf.Session() #creates a session object
 sess.run(init) 
 
@@ -83,6 +83,7 @@ for i in range(ITERS):
 
 #calculating the accuracy of the model
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
+
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 print(sess.run(accuracy, feed_dict={x: x_test, y_: y_test}))
 
