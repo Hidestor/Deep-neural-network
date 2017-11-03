@@ -27,6 +27,7 @@ except:
 
 labels = []
 
+#This code opens the directory dataset(train or validate) and opens the file labels.txt in it. 
 with open(DATASET + LABELS) as f:
     for line in f:
         labels.append(int(line[:-1]))
@@ -43,4 +44,5 @@ for label in labels:
     curr[label] = 1
     preprocessed_labels.append(curr)
 
+#this creates a file named test__preprocessed_labels.npy OR  valid__preprocessed_labels.npy
 np.save(DATASET[:-1] + '_preprocessed_labels', preprocessed_labels)
