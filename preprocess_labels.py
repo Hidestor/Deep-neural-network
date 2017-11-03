@@ -31,6 +31,8 @@ with open(DATASET + LABELS) as f:
     for line in f:
         labels.append(int(line[:-1]))
 
+#list label is first converted into set to remove all duplicates then again recasted into the list
+#final list contains the labels with all elements distinct
 distinct_labels = list(set(labels))
 distinct_labels.sort()
 
