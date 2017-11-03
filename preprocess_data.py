@@ -38,11 +38,11 @@ except:
 #getting the names of all images in the DATASET    
 images = os.listdir(DATASET)
 
-#deleting the labels.txt file from the directory
+#deleting the labels.txt file from the images directory
 images.remove(LABELS) 
 
 #storing all the file names without extension in a list
-images = [int(image[:-4]) for image in images] 
+images = [int(image[:-4]) for image in images]  # -4 because last 4 characters will be .png
 
 images.sort()
 
@@ -50,6 +50,8 @@ images.sort()
 images = [str(image) for image in images] 
 
 
+#This module takes the input of image in form of numpy ndarray and applies gaussian filter to it and finally stores 
+#the pixel information in scaled down form
 def process(image):
     
     # apply gaussian filter to image to make text wider
@@ -72,7 +74,9 @@ preprocessed = []
 
 
 for item in images:
-    image = np.array(io.imread(DATASET + item + PNG))
+    #This code is there to read png image into numpy ndarray (matrix)
+    image = np.array(io.imread(DATASET + item + PNG)) 
+    
     image = process(image)
     preprocessed.append(image)
 
