@@ -1,3 +1,6 @@
+# To test the model type the following command
+# python3 single_layer.py <iterations> <learning rate>
+
 from __future__ import print_function
 
 import os
