@@ -32,11 +32,12 @@ y_test = np.load('valid_preprocessed_labels.npy')
 
 # Parameters
 learning_rate = 0.005
-batch_size = 1000
+batch_size = 1000  
 n_hidden_1 = 1000  # 1st layer number of features
 
-
+# Number of iterations
 training_epochs = 100
+
 display_step = 1
 stddev = 0.01
 
@@ -45,17 +46,22 @@ n_input = len(x_train[0])
 n_classes = 104
 
 # tf Graph input
-x = tf.placeholder("float", [None, n_input])
-y = tf.placeholder("float", [None, n_classes])
+x = tf.placeholder("float", [None, n_input]) #input to the network
+y = tf.placeholder("float", [None, n_classes]) #actual o/p of the network 
 
 
 # Create model
 def multilayer_perceptron(x, weights, biases):
-    # Hidden layer with RELU activation
+    
+    # Hidden layer with RELU activation / Ramp activation function 
     layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
+    
+    #applying activation function to the o/p of layer1
     layer_1 = tf.nn.relu(layer_1)
+    
     # Output layer with linear activation
     out_layer = tf.matmul(layer_1, weights['out']) + biases['out']
+    
     return out_layer
 
 # Store layers weight & bias
@@ -71,9 +77,9 @@ biases = {
 # Construct model
 pred = multilayer_perceptron(x, weights, biases)
 
-# Define loss and optimizer
+# Define loss and optimizer here using Adam optimization
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(pred, y))
-optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost) 
 
 # Initializing the variables
 init = tf.initialize_all_variables()
