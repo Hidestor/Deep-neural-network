@@ -38,7 +38,7 @@ except:
 #getting the names of all images in the DATASET    
 images = os.listdir(DATASET)
 
-#deleting the labels.txt file from the images directory
+#deleting the labels.txt file from the images list
 images.remove(LABELS) 
 
 #storing all the file names without extension in a list
