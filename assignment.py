@@ -9,9 +9,9 @@ from subprocess import call
 TRAIN = 'train/'
 VALIDATE = 'valid/'
 LABELS = 'labels.txt'
-NUM_CLASSES = 104
+NUM_CLASSES = 104 #Different types of images in the dataset.
 
-ITERS = 1000
+ITERS = 1000 #No. of iteration s
 LEARNING_RATE = 0.5
 
 try:
