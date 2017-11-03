@@ -13,6 +13,15 @@ After the training process our model predicts the correct label for the image pr
     the data so that new unlabeled data can be presented to the model and a likely label can be guessed 
     or predicted for that piece of unlabeled data.
 
+Download dataset from the following links:
+     Download train data set from this link
+     
+        https://drive.google.com/file/d/0BzIqj5JgNb5RRlo1aUwyTDNEdzg/view 
+
+    Download validation data set from this link
+    
+        https://drive.google.com/open?id=0BzIqj5JgNb5Ra0duNW95UDNHN0U 
+
 The png image given in dataset is read using python package: scikit-image, it converts the png image into numpy-ndarray
 
 ### Following analysis was done:
