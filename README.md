@@ -13,12 +13,13 @@ After the training process our model predicts the correct label for the image pr
     the data so that new unlabeled data can be presented to the model and a likely label can be guessed 
     or predicted for that piece of unlabeled data.
 
-Download dataset from the following links:
-     Download train data set from this link
+### Download dataset from the following links:
+     
+   a) Download train data set from this link
      
         https://drive.google.com/file/d/0BzIqj5JgNb5RRlo1aUwyTDNEdzg/view 
 
-    Download validation data set from this link
+   b) Download validation data set from this link
     
         https://drive.google.com/open?id=0BzIqj5JgNb5Ra0duNW95UDNHN0U 
 
