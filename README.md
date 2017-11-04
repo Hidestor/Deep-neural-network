@@ -1,6 +1,9 @@
 # Deep-neural-network
 
 Used Tensorflow python library to build a deep neural network for Devanagari character recognition.
+
+TensorFlow relies on a highly efficient C++ backend to do its computation. The connection to this backend is called a session. The common usage for TensorFlow programs is to first create a graph and then launch it in a session.
+
 Goal was to design a feed-forward network for handwritten character regonition of Devanagari script.
 
 To get an idea of working of tensorflow watch this video:
