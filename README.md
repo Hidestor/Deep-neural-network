@@ -3,6 +3,14 @@
 Used Tensorflow python library to build a deep neural network for Devanagari character recognition.
 Goal was to design a feed-forward network for handwritten character regonition of Devanagari script.
 
+To get an idea of working of tensorflow watch this video:
+
+    https://www.youtube.com/watch?v=yX8KuPZCAMo&t=258s
+    
+Read more:
+           
+    https://www.tensorflow.org/versions/r0.7/tutorials/mnist/beginners/index.html        
+
 The labeled dataset was provided for training the model(i.e Test data) were consists of 10,000 PNG format images(320x320). 
 After the training process our model predicts the correct label for the image provided from the validation data set.
 
